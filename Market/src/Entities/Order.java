@@ -10,6 +10,8 @@ public class Order {
 	private String orderState;
 	
 	public Order () {
+		this.orderID = 0L;
+		orderLines.add(new OrderLine());
 	}
 
 	public void setOrderID(Long ID) {

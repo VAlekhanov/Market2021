@@ -7,6 +7,12 @@ import Entities.Item;
 
 public class DataItems {
 	private List<Item> items = new ArrayList<>();
+	
+	public static final String TEST_ITEM_NAME_1 = "Juice";
+	public static final String TEST_ITEM_NAME_2 = "Tomato";
+	public static final String TEST_ITEM_NAME_3 = "Milk";
+	public static final String TEST_ITEM_NAME_4 = "Meat";
+	public static final String TEST_ITEM_NAME_5 = "Chocolate";
 
 	private void defaultItems() {
 //		items.add(new Item("Orange Juice", 123456L, "Drink", "Fresh orange juice", 24));

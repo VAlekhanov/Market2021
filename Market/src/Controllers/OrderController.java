@@ -7,9 +7,11 @@ import Entities.Order;
 import Enums.OrderActionTypeEnum;
 import Enums.OrderStateTypeEnum;
 import History.History;
+import Service.IDGenerator;
 
 public class OrderController {
 
+	private static IDGenerator idGenerator = new IDGenerator();
 	private static History history = new History();
 	private static Cart cart = new Cart();
 
@@ -19,6 +21,7 @@ public class OrderController {
 
 		switch (actionName) {
 		case OrderActionTypeEnum.CREATE: {
+			order.setOrderID(idGenerator.generateNewOrderID());
 			order.setOrderState(OrderStateTypeEnum.DRAFT);
 			history.saveOrder(order);
 			return order;
