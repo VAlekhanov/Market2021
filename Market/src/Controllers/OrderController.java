@@ -11,7 +11,7 @@ import History.History;
 public class OrderController {
 
 	private static History history = new History();
-	private static Cart cart;
+	private static Cart cart = new Cart();
 
 	public Order executeOrderAction(Order order, String actionName) {
 		Long orderId = order.getOrderID();

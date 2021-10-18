@@ -5,6 +5,7 @@ import Controllers.UserController;
 import Entities.Order;
 import Entities.User;
 import Enums.OrderActionTypeEnum;
+import Enums.OrderTypeTypeEnum;
 import Service.IDGenerator;
 
 public class Market {
@@ -24,6 +25,12 @@ public class Market {
 		userController.authorization(userName, password);
 		Order order = new Order();
 		order = orderController.executeOrderAction(order, OrderActionTypeEnum.CREATE);
+		/*add items*/
+		
+		/*...*/
+		order = orderController.executeOrderAction(order, OrderActionTypeEnum.SAVE);
+		order = orderController.executeOrderAction(order, OrderActionTypeEnum.BUY);
+		order = orderController.executeOrderAction(order, OrderActionTypeEnum.DELETE);
 	}
 
 }
