@@ -56,7 +56,17 @@ public class OrderController {
 	public Order getOrderFromListByOrderID(List<Order> orders, Long Id) {
 		int i = 0;
 		for (Order order : orders) {
-			if (order.getOrderID() == orders.get(i).getOrderID()) {
+			if (Id == orders.get(i).getOrderID()) {
+				return order;
+			}
+		}
+		throw new IllegalArgumentException("This order not exist.");
+	}
+	
+	public Order getOrderFromListByrID(List<Order> orders, Long Id) {
+		int i = 0;
+		for (Order order : orders) {
+			if (Id == orders.get(i).getUserID()) {
 				return order;
 			}
 		}

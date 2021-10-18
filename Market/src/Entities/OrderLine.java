@@ -1,7 +1,5 @@
 package Entities;
 
-import java.util.*;
-
 public class OrderLine {
 	private int quantity;
 	private String itemName;
@@ -15,10 +13,6 @@ public class OrderLine {
 		this.itemName = itemName;
 		this.quantity = quantity;
 	}
-
-//	public void setItem (String itemName) {
-//		this.itemName = itemName;
-//	}
 
 	public String getItem() {
 		return this.itemName;
