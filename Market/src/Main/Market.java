@@ -17,7 +17,11 @@ public class Market {
 		User user = new User();
 		String firstName = "Dorin";
 		String lastName = "John";
-		user = userController.createUser(firstName, lastName, idGenerator.generateNewUserID());
+		String password = "password";
+		String userName = "DorJohn";
+		user = userController.createUser(userName,firstName, lastName, idGenerator.generateNewUserID(), password);
+		userController.registration(user);
+		userController.authorization(userName, password);
 		Order order = new Order();
 		order = orderController.executeOrderAction(order, OrderActionTypeEnum.CREATE);
 	}

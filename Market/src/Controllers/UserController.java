@@ -1,28 +1,37 @@
 package Controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Entities.User;
-import History.History;
-import MarketData.DataItems;
-import Service.IDGenerator;
 
 public class UserController {
 
-	public static IDGenerator idGenerator;
-	public static History history;
-	public static DataItems items;
+	private List<User> registredUsers = new ArrayList<>();
 
-	public User createUser(String firstName, String lastName, Long userID) {
+	public User createUser(String userName,String firstName, String lastName, Long userID, String password) {
 		User user = new User();
+		user.setUserName(userName);
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setID(userID);
+		user.setPassword(password);
 		return user;
 	}
-	
-	/*Registration*/
-	
-	
-	/*Authorization*/
-	
-	
+
+	/* Registration */
+	public void registration(User user) {
+		registredUsers.add(user);
+	}
+
+	/* Authorization */
+	public boolean authorization(String userName, String password) {
+		for(User iterUser : registredUsers) {
+			if(userName == iterUser.getUserName() && password == iterUser.getPassword()) {
+				return true;
+			}
+		}
+		throw new IllegalArgumentException("Wrong username or password.");
+	}
+
 }
