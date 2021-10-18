@@ -9,9 +9,9 @@ import Service.IDGenerator;
 
 public class Market {
 
-	private static UserController userController;
-	private static OrderController orderController;
-	private static IDGenerator idGenerator;
+	private static UserController userController = new UserController();
+	private static OrderController orderController =  new OrderController();
+	private static IDGenerator idGenerator = new IDGenerator();
 
 	public static void main(String Args[]) {
 		User user = new User();

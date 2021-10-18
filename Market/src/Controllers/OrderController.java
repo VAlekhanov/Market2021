@@ -10,7 +10,7 @@ import History.History;
 
 public class OrderController {
 
-	private static History history;
+	private static History history = new History();
 	private static Cart cart;
 
 	public Order executeOrderAction(Order order, String actionName) {
